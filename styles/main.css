@@ -1,0 +1,163 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+:root {
+    --main-bg-color: #0F1724;
+    --bg-card: #1C2638;
+    --accent-color: #7047EB;
+    --main-text: #F8FAFC;
+    --second-text: #9CAAC0;
+    --card-radius: 12px;
+}
+
+@font-face {
+    font-family: inter-regular;
+    src: url(../assets/fonts/Inter_24pt-Regular.ttf);
+}
+
+body {
+    background-color: var(--main-bg-color);
+}
+
+ul {
+    list-style: none;
+}
+
+.aside {
+    max-width: 350px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px;
+    border-right: rgba(255, 255, 255, 0.171) 1px solid;
+    background-color: #141c2a;
+}
+
+.aside__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.aside__heading {
+    color: white;
+    font-family: inter-regular;
+    font-size: 24px;
+    font-weight: 200;
+}
+
+.aside__task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-list__wrapper {
+    padding: 15px 20px;
+    border-radius: var(--card-radius);
+    cursor: pointer;
+}
+
+.task-list__wrapper:nth-of-type(1) {
+    background: linear-gradient(110deg,
+            #3D3093 0%,
+            #392D8C 50%,
+            #3E3091 100%);
+}
+
+.task-list__element {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-list__img {
+    width: 20px;
+    height: 20px;
+}
+
+.task-list__title,
+.priorities-list__title {
+    font-size: 16px;
+    font-family: inter-regular;
+    font-weight: 200;
+    color: var(--second-text);
+}
+
+.done {
+    opacity: 0.6;
+}
+
+.between {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.171);
+}
+
+.aside__priorities-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.priorities-list__element {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+}
+
+.priorities-list__color {
+    width: 16px;
+    height: 16px;
+}
+
+.orange {
+    background-color: #f65b5a;
+}
+
+.yellow {
+    background-color: #f7c021;
+}
+
+.green {
+    background-color: #40e755;
+}
