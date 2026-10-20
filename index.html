@@ -95,8 +95,78 @@
     </aside>
     <main class="main">
         <header class="main__header">
-
+            <div class="header__title-wrapper">
+                <h1 class="header__heading">
+                    Мои задачи
+                </h1>
+                <h4 class="header__slogan">
+                    Планируй. Делай. Достигай.
+                </h4>
+            </div>
+            <div class="search-add-task__wrapper">
+                <form action="" class="header__search-form">
+                    <img src="assets/icons/loop.png" alt="" class="search-logo">
+                    <input type="search" class="header__search" placeholder="Поиск задач...">
+                </form>
+                <button class="add-task">
+                    <img src="assets/icons/plus.png" alt="" class="plus-logo"> Добавить задачу
+                </button>
+            </div>
         </header>
+        <section class="task-statistics">
+            <div class="task-statistic total-tasks">
+                <div class="task-statistic__wrapper-logo blue">
+                    <img src="assets/icons/list.png" alt="" class="task-statistic__logo">
+                </div>
+                <div class="task-statistic__content">
+                    <h3 class="task-statistic__number">
+                        12
+                    </h3>
+                    <h4 class="task-statistic__title">
+                        Всего задач
+                    </h4>
+                </div>
+            </div>
+            <div class="task-statistic for-execution">
+                <div class="task-statistic__wrapper-logo purple">
+                    <img src="assets/icons/progress.png" alt="" class="task-statistic__logo">
+                </div>
+                <div class="task-statistic__content">
+                    <h3 class="task-statistic__number">
+                        4
+                    </h3>
+                    <h4 class="task-statistic__title">
+                        К выполнению
+                    </h4>
+                </div>
+            </div>
+            <div class="task-statistic in-progress">
+                <div class="task-statistic__wrapper-logo orange">
+                    <img src="assets/icons/clock.png" alt="" class="task-statistic__logo">
+                </div>
+                <div class="task-statistic__content">
+                    <h3 class="task-statistic__number">
+                        3
+                    </h3>
+                    <h4 class="task-statistic__title">
+                        В работе
+                    </h4>
+                </div>
+            </div>
+            <div class="task-statistic completed">
+                <div class="task-statistic__wrapper-logo green">
+                    <img src="assets/icons/done.png" alt="" class="task-statistic__logo">
+                </div>
+                <div class="task-statistic__content">
+                    <h3 class="task-statistic__number">
+                        5
+                    </h3>
+                    <h4 class="task-statistic__title">
+                        Выполнено
+                    </h4>
+                </div>
+            </div>
+        </section>
     </main>
     <script src="scripts/app.js"></script>
 </body>
