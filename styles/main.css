@@ -62,7 +62,7 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding: 30px;
+    padding: 25px;
     border-right: rgba(255, 255, 255, 0.171) 1px solid;
     background-color: #141c2a;
 }
@@ -93,10 +93,31 @@ ul {
 }
 
 .task-list__wrapper {
-    padding: 15px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
     border-radius: var(--card-radius);
     cursor: pointer;
 }
+
+.task-list__number,
+.priorities-list__number {
+    width: 25px;
+    height: 28px;
+    background-color: #1c2434;
+    border: 1px solid rgba(255, 255, 255, 0.114);
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--second-text);
+    font-family: inter-regular;
+    font-size: 14px;
+    font-weight: 100;
+}
+
 
 .task-list__wrapper:nth-of-type(1) {
     background: linear-gradient(110deg,
@@ -124,6 +145,10 @@ ul {
     color: var(--second-text);
 }
 
+.task-list__title__active {
+    color: white !important;
+}
+
 .done {
     opacity: 0.6;
 }
@@ -139,11 +164,19 @@ ul {
     flex-direction: column;
 }
 
+.priorities-list__wrapper {
+    width: 100%;
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .priorities-list__element {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 15px 20px;
+    padding: 15px 10px;
 }
 
 .priorities-list__color {
@@ -165,7 +198,7 @@ ul {
 
 .main {
     width: 100%;
-    padding: 30px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -280,6 +313,7 @@ ul {
     gap: 20px;
     padding: 25px;
     border: 1px solid rgba(255, 255, 255, 0.114);
+    cursor: pointer;
 }
 
 .task-statistic__wrapper-logo {
@@ -318,16 +352,20 @@ ul {
 
 .task-statistic__wrapper-logo.blue {
     background-color: #242e46;
+    box-shadow: 1px 1px 5px 5px #425b96;
 }
 
 .task-statistic__wrapper-logo.purple {
     background-color: #252546;
+    box-shadow: 1px 1px 5px 5px #5757ab;
 }
 
 .task-statistic__wrapper-logo.orange {
     background-color: #322d2b;
+    box-shadow: 1px 1px 5px 5px #97837a;
 }
 
 .task-statistic__wrapper-logo.green {
     background-color: #1c3738;
+    box-shadow: 1px 1px 5px 5px #4d999c;
 }
