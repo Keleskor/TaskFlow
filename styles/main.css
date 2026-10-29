@@ -369,3 +369,207 @@ ul {
     background-color: #1c3738;
     box-shadow: 1px 1px 5px 5px #4d999c;
 }
+
+.task-columns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.for-execution-column,
+.in-progress-column,
+.ready-column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px 20px;
+    border-radius: var(--card-radius);
+    background-color: #1c2434;
+    flex: 1;
+    border: 1px solid rgba(255, 255, 255, 0.114);
+}
+
+.in-progress-column__header,
+.ready-column__header,
+.for-execution-column__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.for-execution-column__wrapper-heading,
+.in-progress-column__wrapper-heading,
+.ready-column__wrapper-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.circle-purple {
+    background-color: #5757ab;
+}
+
+.circle-orange {
+    background-color: #97837a;
+}
+
+.circle-green {
+    background-color: #4d999c;
+}
+
+.for-execution-column__heading,
+.in-progress-column__heading,
+.ready-column__heading {
+    font-size: 20px;
+    color: white;
+    font-family: inter-regular;
+    font-weight: 200;
+}
+
+.for-execution-column__number,
+.in-progress-column__number,
+.ready-column__number {
+    font-size: 18px;
+    color: var(--second-text);
+    font-family: inter-regular;
+    font-weight: 200;
+}
+
+.for-execution-column__add,
+.in-progress-column__add,
+.ready-column___add {
+    width: 36px;
+    height: 36px;
+    border-radius: 5px;
+    background-color: #1c2434;
+    border: 1px solid rgba(255, 255, 255, 0.114);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.for-execution__block,
+.in-progress__block,
+.ready-column__block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #202939;
+    border: 1px solid rgba(255, 255, 255, 0.114);
+    border-radius: var(--card-radius);
+}
+
+.for-execution__block__header,
+.in-progress__block__header,
+.ready-column__block__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.for-execution__block__heading,
+.in-progress__block__heading,
+.ready-column__block__heading {
+    color: white;
+    font-family: inter-regular;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.three-dots-logo {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.for-execution__description,
+.in-progress__description,
+.ready-column__description {
+    font-size: 16px;
+    font-family: inter-regular;
+    color: var(--second-text);
+    font-weight: 200;
+    max-width: 400px;
+}
+
+.ready-column__footer,
+.in-progress__footer,
+.for-execution__footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.complexity-hight {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+    max-width: 130px;
+    height: 40px;
+    width: 100%;
+    border-radius: var(--card-radius);
+    background: linear-gradient(110deg,
+            #653339 0%,
+            #5A2D35 50%,
+            #4B2832 100%);
+}
+
+.complexity-hight__title {
+    font-size: 14px;
+    font-family: inter-regular;
+    font-weight: 200;
+    color: #f65b5a;
+}
+
+.complexity-hight__wrapper-logo {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #f65b5a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.complexity-hight__wrapper-logo>img {
+    width: 12px;
+    height: 14px;
+}
+
+.for-execution__wrapper-date,
+.in-progress__wrapper-date,
+.ready-column__wrapper-date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ready-column__date,
+.in-progress__date,
+.for-execution__date {
+    color: var(--second-text);
+    font-size: 16px;
+    font-family: inter-regular;
+    font-weight: 200;
+}
+
+.calendar-logo {
+    width: 20px;
+    height: 20px;
+}
