@@ -70,6 +70,7 @@ ul {
     width: 30px;
     height: 30px;
     cursor: pointer;
+    z-index: 5;
 }
 
 .aside__header {
@@ -591,6 +592,10 @@ ul {
     display: none;
 }
 
+.aside-active {
+    display: flex !important;
+}
+
 @media(max-width: 1365px) {
     .search-add-task__wrapper {
         gap: 20px;
@@ -692,8 +697,12 @@ ul {
     }
 
     .aside {
-        padding: 50px 10px;
+        padding: 80px 10px;
         display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
     }
 
     .add-task h4 {
@@ -715,5 +724,33 @@ ul {
     .mobile-header {
         display: flex;
         justify-content: center;
+    }
+
+    .task-columns {
+        flex-direction: column;
+    }
+
+    .aside .aside__header {
+        display: none;
+    }
+}
+
+@media(max-width: 767px) {
+    .main {
+        padding: 10px;
+    }
+
+    .task-statistic {
+        padding: 15px 10px;
+    }
+
+    .task-statistic__wrapper-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .task-statistic__logo {
+        width: 15px;
+        height: 15px;
     }
 }
