@@ -58,13 +58,18 @@ ul {
 
 .aside {
     width: 300px;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 40px;
     padding: 25px;
     border-right: rgba(255, 255, 255, 0.171) 1px solid;
     background-color: #141c2a;
+}
+
+.burger-menu {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 }
 
 .aside__header {
@@ -289,6 +294,10 @@ ul {
             #653CE7 100%);
     border: none;
     cursor: pointer;
+}
+
+.add-task h4 {
+    font-weight: 200;
 }
 
 .plus-logo {
@@ -572,4 +581,139 @@ ul {
 .calendar-logo {
     width: 20px;
     height: 20px;
+}
+
+.burger-menu {
+    display: none;
+}
+
+.mobile-header {
+    display: none;
+}
+
+@media(max-width: 1365px) {
+    .search-add-task__wrapper {
+        gap: 20px;
+        width: auto;
+    }
+
+    .task-statistic__wrapper-logo {
+        width: 40px;
+        height: 40px;
+        aspect-ratio: 1/1;
+    }
+
+    .task-statistic {
+        padding: 20px;
+    }
+
+    .task-statistic__logo {
+        width: 20px;
+        height: 20px;
+    }
+
+    .for-execution-column,
+    .in-progress-column,
+    .ready-column {
+        padding: 20px 15px;
+    }
+
+    .aside {
+        padding: 10px;
+    }
+
+    .task-statistic__title {
+        white-space: nowrap;
+    }
+
+    .task-statistic__number {
+        font-size: 18px;
+    }
+
+    .header__heading {
+        font-size: 30px;
+    }
+
+    .task-statistics {
+        gap: 10px;
+    }
+
+    .ready-column__footer,
+    .in-progress__footer,
+    .for-execution__footer {
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap: 20px;
+    }
+
+    .for-execution__wrapper-date,
+    .in-progress__wrapper-date,
+    .ready-column__wrapper-date {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .for-execution-column__heading,
+    .in-progress-column__heading,
+    .ready-column__heading {
+        font-size: 18px;
+        white-space: nowrap;
+    }
+
+    .task-statistic__content {
+        overflow: hidden;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .for-execution__block,
+    .in-progress__block,
+    .ready-column__block {
+        padding: 15px;
+    }
+
+    .in-progress-column__header,
+    .ready-column__header,
+    .for-execution-column__header {
+        gap: 15px;
+    }
+
+    .task-columns {
+        gap: 10px;
+    }
+}
+
+@media(max-width: 1023px) {
+    .burger-menu {
+        display: block;
+    }
+
+    .aside {
+        padding: 50px 10px;
+        display: none;
+    }
+
+    .add-task h4 {
+        display: none;
+    }
+
+    .add-task {
+        width: auto;
+    }
+
+    .header__search-form {
+        max-width: 60px;
+    }
+
+    .header__title-wrapper {
+        display: none;
+    }
+
+    .mobile-header {
+        display: flex;
+        justify-content: center;
+    }
 }
