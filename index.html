@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <div class="blocking-mask"></div>
     <aside class="aside">
         <div class="aside__header">
             <img src="assets/icons/checkbox.png" alt="" class="checkbox-img">
@@ -330,6 +331,52 @@
             </div>
         </section>
     </main>
+    <dialog class="task-modal">
+        <form action="" class="task-modal__form">
+            <div class="task-modal__header">
+                <h3 class="task-modal__heading">
+                    Добавить задачу
+                </h3>
+                <button type="button" class="task-modal__close-button">
+                    ×
+                </button>
+            </div>
+            <label for="task-name__input" class="task-name__heading">
+                Название задачи <span class="task-name__symbol">*</span>
+            </label>
+            <input type="text" id="task-name__input" class="task-name__input" placeholder="Введите название...">
+            <label for="" class="task-decription">
+                Описание
+            </label>
+            <textarea name="task-description__text" id="" class="task-description__text"
+                placeholder="Введите описание задачи...">
+            </textarea>
+            <div class="task-parameters">
+                <div class="task-modal__field">
+                    <label for="task-priority">Приоритет</label>
+                    <select id="task-priority" name="priority">
+                        <option value="high">Высокий</option>
+                        <option value="medium">Средний</option>
+                        <option value="low">Низкий</option>
+                    </select>
+                </div>
+                <div class="wrapper__task-date">
+                    <label for="">
+                        Срок выполнения
+                    </label>
+                    <input type="date" class="task-date">
+                </div>
+            </div>
+            <div class="task-modal__control">
+                <button type="button" class="task-modal__cancel">
+                    Отмена
+                </button>
+                <button class="task-modal__add">
+                    Добавить задачу
+                </button>
+            </div>
+        </form>
+    </dialog>
     <script src="scripts/app.js"></script>
 </body>
 
