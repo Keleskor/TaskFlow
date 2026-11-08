@@ -341,30 +341,37 @@
                     ×
                 </button>
             </div>
-            <label for="task-name__input" class="task-name__heading">
-                Название задачи <span class="task-name__symbol">*</span>
-            </label>
-            <input type="text" id="task-name__input" class="task-name__input" placeholder="Введите название...">
-            <label for="" class="task-decription">
-                Описание
-            </label>
-            <textarea name="task-description__text" id="" class="task-description__text"
-                placeholder="Введите описание задачи...">
-            </textarea>
+            <div class="task-name__wrapper">
+                <label for="task-name__input" class="task-name__heading">
+                    Название задачи <span class="task-name__symbol">*</span>
+                </label>
+                <input type="text" id="task-name__input" class="task-name__input" placeholder="Введите название...">
+            </div>
+            <div class="task-description__wrapper">
+                <label for="" class="task-decription">
+                    Описание
+                </label>
+                <textarea name="task-description__text" id="" class="task-description__text"
+                    placeholder="Введите описание задачи..."></textarea>
+            </div>
             <div class="task-parameters">
                 <div class="task-modal__field">
-                    <label for="task-priority">Приоритет</label>
-                    <select id="task-priority" name="priority">
-                        <option value="high">Высокий</option>
-                        <option value="medium">Средний</option>
-                        <option value="low">Низкий</option>
+                    <label for="task-priority" class="priority">Приоритет</label>
+                    <select id="task-priority" name="priority" class="priority-select">
+                        <option value="high" class="high">🔴 Высокий</option>
+                        <option value="medium" class="medium">🟡 Средний</option>
+                        <option value="low" class="low">🟢 Низкий</option>
                     </select>
                 </div>
                 <div class="wrapper__task-date">
-                    <label for="">
+                    <label for="" class="deadline">
                         Срок выполнения
                     </label>
-                    <input type="date" class="task-date">
+                    <button type="button" class="date-button">
+                        Выберите дату
+                    </button>
+
+                    <input type="date" id="task-date">
                 </div>
             </div>
             <div class="task-modal__control">
