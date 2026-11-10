@@ -8,8 +8,17 @@ let addTask = document.querySelector('.add-task');
 let taskModal = document.querySelector('.task-modal');
 let closeModalButton = document.querySelector('.task-modal__close-button');
 let cancelModalButton = document.querySelector('.task-modal__cancel');
-let dateButton = document.querySelector(".date-button");
 let dateInput = document.querySelector("#task-date");
+
+flatpickr(".task-date__date", {
+    locale: "ru",
+    dateFormat: "d.m.Y",
+    appendTo: taskModal,
+    disableMobile: true,
+    onReady: function (selectedDates, dateStr, instance) {
+        instance.calendarContainer.classList.add("task-calendar");
+    }
+});
 
 burgerLogo.addEventListener("click", () => {
     aside.classList.toggle('aside-active');
@@ -28,6 +37,3 @@ closeModalButton.addEventListener("click", () => {
 cancelModalButton.addEventListener("click", () => {
     taskModal.close();
 })
-dateButton.addEventListener("click", () => {
-    dateInput.showPicker();
-});
