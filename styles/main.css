@@ -11,6 +11,7 @@
 
 html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
 }
 
 body {
@@ -63,19 +64,30 @@ ul {
     flex-direction: column;
     gap: 40px;
     z-index: 5;
-    padding: 25px;
+    padding: 20px;
     border-right: rgba(255, 255, 255, 0.171) 1px solid;
     background-color: #141c2a;
+    transition: 0.3s;
 }
 
+.burger-menu__button,
 .burger-menu {
     width: 30px;
     height: 30px;
     cursor: pointer;
     z-index: 5;
+    background-color: transparent;
+    border: none;
+    display: none;
 }
 
 .aside__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aside__header__wrapper {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -176,7 +188,7 @@ ul {
 .priorities-list__wrapper {
     width: 100%;
     display: flex;
-    padding: 0 10px;
+    padding: 10px 10px;
     align-items: center;
     justify-content: space-between;
 }
@@ -231,6 +243,38 @@ ul {
     font-size: 36px;
     color: white;
     font-family: inter-regular;
+}
+
+.collapse-button {
+    background-color: transparent;
+    border: none;
+    border: 1px solid #9CAAC0;
+    padding: 5px 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.collapse-button:hover {
+    border: 1px solid white;
+    transition: 0.3s;
+}
+
+.aside-collapse {
+    transition: 0.3s;
+    width: 0px;
+    z-index: -1;
+}
+
+.collapse-button:hover>.collapse-icon {
+    transition: 0.3s;
+    stroke: white;
+}
+
+.collapse-icon {
+    width: 20px;
+    height: 20px;
+    transition: 0.3s;
 }
 
 .header__slogan {
@@ -311,9 +355,9 @@ ul {
 
 .task-statistics {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
 }
 
 .task-statistic {
@@ -573,9 +617,17 @@ ul {
     gap: 10px;
 }
 
-.ready-column__date,
-.in-progress__date,
-.for-execution__date {
+.task-list__button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    border: none;
+    border-radius: var(--card-radius);
+    padding: 5px;
+}
+
+.task-card__date {
     color: var(--second-text);
     font-size: 16px;
     font-family: inter-regular;
@@ -743,7 +795,7 @@ ul {
 .wrapper__task-date {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 
 .task-priority,
@@ -862,7 +914,7 @@ ul {
     }
 
     .aside {
-        padding: 10px;
+        padding: 20px 10px;
     }
 
     .task-statistic__title {
@@ -943,6 +995,11 @@ ul {
         height: 100%;
     }
 
+    .burger-menu__button,
+    .burger-menu {
+        display: block;
+    }
+
     .add-task h4 {
         display: none;
     }
@@ -962,6 +1019,7 @@ ul {
     .mobile-header {
         display: flex;
         justify-content: center;
+        gap: 10px;
     }
 
     .task-columns {
@@ -973,6 +1031,12 @@ ul {
     }
 }
 
+@media(max-width: 900px) {
+    .task-statistics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media(max-width: 767px) {
     .main {
         padding: 10px;
@@ -980,6 +1044,10 @@ ul {
 
     .task-statistic {
         padding: 15px 10px;
+    }
+
+    .burger-menu__button {
+        margin: 10px;
     }
 
     .task-statistic__wrapper-logo {

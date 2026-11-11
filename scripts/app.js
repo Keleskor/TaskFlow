@@ -9,6 +9,9 @@ let taskModal = document.querySelector('.task-modal');
 let closeModalButton = document.querySelector('.task-modal__close-button');
 let cancelModalButton = document.querySelector('.task-modal__cancel');
 let dateInput = document.querySelector("#task-date");
+let burgerButton = document.querySelector('.burger-menu');
+let collapseButton = document.querySelector('.collapse-button');
+
 
 flatpickr(".task-date__date", {
     locale: "ru",
@@ -24,6 +27,19 @@ burgerLogo.addEventListener("click", () => {
     aside.classList.toggle('aside-active');
     body.classList.toggle('blocking');
     blockingMask.classList.toggle('blocking-mask__active');
+    const burgerOpen = aside.classList.contains('aside-active');
+    if (burgerOpen) {
+        burgerButton.src = "assets/icons/close.png";
+        burgerButton.style.width = '20px';
+        burgerButton.style.height = '20px';
+    } else {
+        burgerButton.src = "assets/icons/menu.png";
+        burgerButton.style.width = '30px';
+        burgerButton.style.height = '30px';
+    }
+})
+collapseButton.addEventListener('click', () => {
+    aside.classList.toggle('aside-collapse');
 })
 searchLogo.addEventListener("click", () => {
     wrapperSearch.classList.toggle('search__active');

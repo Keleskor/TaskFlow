@@ -16,52 +16,71 @@
     <div class="blocking-mask"></div>
     <aside class="aside">
         <div class="aside__header">
-            <img src="assets/icons/checkbox.png" alt="" class="checkbox-img">
-            <h3 class="aside__heading">
-                TaskFlow
-            </h3>
+            <div class="aside__header__wrapper">
+                <img src="assets/icons/checkbox.png" alt="" class="checkbox-img">
+                <h3 class="aside__heading">
+                    TaskFlow
+                </h3>
+            </div>
+            <button class="collapse-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="#9CAAC0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="collapse-icon">
+                    <rect width="18" height="18" x="3" y="3" rx="2" />
+                    <path d="M9 3v18" />
+                    <path d="m16 15-3-3 3-3" />
+                </svg>
+            </button>
         </div>
         <ul class="aside__task-list">
             <li class="task-list__wrapper">
-                <div class="task-list__element">
-                    <img src="assets/icons/list.png" alt="" class="task-list__img">
-                    <h4 class="task-list__title task-list__title__active">
-                        Все задачи
-                    </h4>
-                </div>
+                <button class="task-list__button">
+                    <div class="task-list__element">
+                        <img src="assets/icons/list.png" alt="" class="task-list__img">
+                        <h4 class="task-list__title task-list__title__active">
+                            Все задачи
+                        </h4>
+                    </div>
+                </button>
             </li>
             <li class="task-list__wrapper">
-                <div class="task-list__element">
-                    <img src="assets/icons/progress.png" alt="" class="task-list__img">
-                    <h4 class="task-list__title">
-                        К выполнению
-                    </h4>
-                </div>
-                <div class="task-list__number">
-                    4
-                </div>
+                <button class="task-list__button">
+                    <div class="task-list__element">
+                        <img src="assets/icons/progress.png" alt="" class="task-list__img">
+                        <h4 class="task-list__title">
+                            К выполнению
+                        </h4>
+                    </div>
+                    <div class="task-list__number">
+                        4
+                    </div>
+                </button>
             </li>
             <li class="task-list__wrapper">
-                <div class="task-list__element">
-                    <img src="assets/icons/clock.png" alt="" class="task-list__img">
-                    <h4 class="task-list__title">
-                        В работе
-                    </h4>
-                </div>
-                <div class="task-list__number">
-                    4
-                </div>
+                <button class="task-list__button">
+                    <div class="task-list__element">
+                        <img src="assets/icons/clock.png" alt="" class="task-list__img">
+                        <h4 class="task-list__title">
+                            В работе
+                        </h4>
+                    </div>
+                    <div class="task-list__number">
+                        4
+                    </div>
+                </button>
             </li>
             <li class="task-list__wrapper">
-                <div class="task-list__element">
-                    <img src="assets/icons/done.png" alt="" class="task-list__img done">
-                    <h4 class="task-list__title">
-                        Готово
-                    </h4>
-                </div>
-                <div class="task-list__number">
-                    4
-                </div>
+                <button class="task-list__button">
+                    <div class="task-list__element">
+                        <img src="assets/icons/done.png" alt="" class="task-list__img done">
+                        <h4 class="task-list__title">
+                            Готово
+                        </h4>
+                    </div>
+                    <div class="task-list__number">
+                        4
+                    </div>
+                </button>
             </li>
         </ul>
         <hr class="between">
@@ -117,7 +136,9 @@
     </aside>
     <main class="main">
         <header class="main__header">
-            <img src="assets/icons/menu.png" alt="" class="burger-menu">
+            <button class="burger-menu__button">
+                <img src="assets/icons/menu.png" alt="" class="burger-menu">
+            </button>
             <div class="aside__header mobile-header">
                 <img src="assets/icons/checkbox.png" alt="" class="checkbox-img">
                 <h3 class="aside__heading">
@@ -237,9 +258,9 @@
                         </div>
                         <div class="for-execution__wrapper-date">
                             <img src="assets/icons/calendar.png" alt="" class="calendar-logo">
-                            <h5 class="for-execution__date">
-                                12 мая
-                            </h5>
+                            <time class="task-card__date" datetime="2026-11-15">
+                                15 ноября
+                            </time>
                         </div>
                     </div>
                 </div>
@@ -281,9 +302,9 @@
                         </div>
                         <div class="in-progress__wrapper-date">
                             <img src="assets/icons/calendar.png" alt="" class="calendar-logo">
-                            <h5 class="in-progress__date">
-                                12 мая
-                            </h5>
+                            <time class="task-card__date" datetime="2026-11-15">
+                                15 ноября
+                            </time>
                         </div>
                     </div>
                 </div>
@@ -325,9 +346,9 @@
                         </div>
                         <div class="ready-column__wrapper-date">
                             <img src="assets/icons/calendar.png" alt="" class="calendar-logo">
-                            <h5 class="ready-column__date">
-                                12 мая
-                            </h5>
+                            <time class="task-card__date" datetime="2026-11-15">
+                                15 ноября
+                            </time>
                         </div>
                     </div>
                 </div>
@@ -348,13 +369,15 @@
                 <label for="task-name__input" class="task-name__heading">
                     Название задачи <span class="task-name__symbol">*</span>
                 </label>
-                <input type="text" id="task-name__input" class="task-name__input" placeholder="Введите название..." required>
+                <input type="text" id="task-name__input" class="task-name__input" placeholder="Введите название..."
+                    required>
             </div>
             <div class="task-description__wrapper">
                 <label for="task-description__text" class="task-decription">
                     Описание
                 </label>
-                <textarea name="task-description__text" id="task-description__text" class="task-description__text" placeholder="Введите описание задачи..."></textarea>
+                <textarea name="task-description__text" id="task-description__text" class="task-description__text"
+                    placeholder="Введите описание задачи..."></textarea>
             </div>
             <div class="task-parameters">
                 <div class="task-modal__field">
