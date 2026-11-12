@@ -1,16 +1,16 @@
-let burgerLogo = document.querySelector('.burger-menu');
-let aside = document.querySelector('.aside');
-let body = document.querySelector('body');
-let blockingMask = document.querySelector('.blocking-mask');
-let searchLogo = document.querySelector('.search-logo');
-let wrapperSearch = document.querySelector('.header__search-form');
-let addTask = document.querySelector('.add-task');
-let taskModal = document.querySelector('.task-modal');
-let closeModalButton = document.querySelector('.task-modal__close-button');
-let cancelModalButton = document.querySelector('.task-modal__cancel');
-let dateInput = document.querySelector("#task-date");
-let burgerButton = document.querySelector('.burger-menu');
-let collapseButton = document.querySelector('.collapse-button');
+const burgerLogo = document.querySelector('.burger-menu');
+const aside = document.querySelector('.aside');
+const body = document.querySelector('body');
+const blockingMask = document.querySelector('.blocking-mask');
+const searchLogo = document.querySelector('.search-logo');
+const wrapperSearch = document.querySelector('.header__search-form');
+const addTask = document.querySelector('.add-task');
+const taskModal = document.querySelector('.task-modal');
+const closeModalButton = document.querySelector('.task-modal__close-button');
+const cancelModalButton = document.querySelector('.task-modal__cancel');
+const dateInput = document.querySelector("#task-date");
+const burgerButton = document.querySelector('.burger-menu');
+const collapseButton = document.querySelector('.collapse-button');
 
 
 flatpickr(".task-date__date", {

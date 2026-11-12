@@ -83,6 +83,7 @@ ul {
 
 .aside__header {
     display: flex;
+    gap: 20px;
     align-items: center;
     justify-content: space-between;
 }
@@ -117,7 +118,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10px;
+    padding: 10px 0px;
     border-radius: var(--card-radius);
     cursor: pointer;
 }
@@ -163,6 +164,7 @@ ul {
     font-family: inter-regular;
     font-weight: 200;
     color: var(--second-text);
+    white-space: nowrap;
 }
 
 .task-list__title__active {
@@ -188,7 +190,7 @@ ul {
 .priorities-list__wrapper {
     width: 100%;
     display: flex;
-    padding: 10px 10px;
+    padding: 10px 5px;
     align-items: center;
     justify-content: space-between;
 }
@@ -249,7 +251,7 @@ ul {
     background-color: transparent;
     border: none;
     border: 1px solid #9CAAC0;
-    padding: 5px 10px;
+    padding: 3px 7px;
     border-radius: 30px;
     cursor: pointer;
     transition: 0.3s;
@@ -262,7 +264,9 @@ ul {
 
 .aside-collapse {
     transition: 0.3s;
-    width: 0px;
+    width: 40px;
+    overflow: hidden;
+    padding: 0px !important;
     z-index: -1;
 }
 
@@ -624,7 +628,7 @@ ul {
     background-color: transparent;
     border: none;
     border-radius: var(--card-radius);
-    padding: 5px;
+    padding: 5px 5px 5px 10px;
 }
 
 .task-card__date {
@@ -890,6 +894,11 @@ ul {
     .search-add-task__wrapper {
         gap: 20px;
         width: auto;
+    }
+
+    .checkbox-img {
+        width: 30px;
+        height: 30px;
     }
 
     .task-statistic__wrapper-logo {
