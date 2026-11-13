@@ -11,6 +11,8 @@ const cancelModalButton = document.querySelector('.task-modal__cancel');
 const dateInput = document.querySelector("#task-date");
 const burgerButton = document.querySelector('.burger-menu');
 const collapseButton = document.querySelector('.collapse-button');
+const openButton = document.querySelector('.open-button');
+const headerTitle = document.querySelector('.header__title-wrapper');
 
 
 flatpickr(".task-date__date", {
@@ -39,7 +41,15 @@ burgerLogo.addEventListener("click", () => {
     }
 })
 collapseButton.addEventListener('click', () => {
-    aside.classList.toggle('aside-collapse');
+    aside.classList.add('aside-collapse');
+    openButton.classList.add('open-button__acitve');
+    headerTitle.classList.add('header__title-wrapper__active');
+
+})
+openButton.addEventListener('click', () => {
+    aside.classList.remove('aside-collapse');
+    openButton.classList.remove('open-button__acitve');
+    headerTitle.classList.remove('header__title-wrapper__active');
 })
 searchLogo.addEventListener("click", () => {
     wrapperSearch.classList.toggle('search__active');

@@ -67,7 +67,10 @@ ul {
     padding: 20px;
     border-right: rgba(255, 255, 255, 0.171) 1px solid;
     background-color: #141c2a;
-    transition: 0.3s;
+    transition:
+        width 0.3s ease,
+        overflow 0.3s ease,
+        padding 0.3s ease;
 }
 
 .burger-menu__button,
@@ -239,6 +242,12 @@ ul {
     flex-direction: column;
     gap: 5px;
     flex-shrink: 0;
+    transition: 0.3s;
+}
+
+.header__title-wrapper__active {
+    transition: 0.3s;
+    padding-left: 70px;
 }
 
 .header__heading {
@@ -254,8 +263,8 @@ ul {
     padding: 3px 7px;
     border-radius: 30px;
     cursor: pointer;
-    transition: 0.3s;
 }
+
 
 .collapse-button:hover {
     border: 1px solid white;
@@ -263,11 +272,54 @@ ul {
 }
 
 .aside-collapse {
-    transition: 0.3s;
-    width: 40px;
+    transition:
+        width 0.3s ease,
+        overflow 0.3s ease,
+        padding 0.3s ease;
+    width: 0px;
     overflow: hidden;
     padding: 0px !important;
     z-index: -1;
+}
+
+.open-button {
+    position: absolute;
+    top: 25px;
+    left: 35px;
+    background-color: transparent;
+    border: none;
+    transform: rotate(180deg);
+    border: 1px solid #9CAAC0;
+    padding: 3px 7px;
+    border-radius: 30px;
+    cursor: pointer;
+    visibility: hidden;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s,
+        overflow 0.2s ease;
+}
+
+.open-button:hover {
+    border: 1px solid white;
+    transition: 0.2s;
+}
+
+.open-button:hover>.collapse-icon {
+    transition: 0.3s;
+    stroke: white;
+}
+
+.open-button__acitve {
+    opacity: 1;
+    visibility: visible;
+    overflow: auto;
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s,
+        overflow 0.2s ease;
 }
 
 .collapse-button:hover>.collapse-icon {
