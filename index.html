@@ -51,7 +51,7 @@
                             </h4>
                         </div>
                         <div class="task-list__number">
-                            4
+                            0
                         </div>
                     </button>
                 </li>
@@ -64,7 +64,7 @@
                             </h4>
                         </div>
                         <div class="task-list__number">
-                            4
+                            0
                         </div>
                     </button>
                 </li>
@@ -77,7 +77,7 @@
                             </h4>
                         </div>
                         <div class="task-list__number">
-                            4
+                            0
                         </div>
                     </button>
                 </li>
@@ -102,7 +102,7 @@
                         </h4>
                     </div>
                     <div class="priorities-list__number">
-                        4
+                        0
                     </div>
                 </li>
                 <li class="priorities-list__wrapper">
@@ -115,7 +115,7 @@
                         </h4>
                     </div>
                     <div class="priorities-list__number">
-                        4
+                        0
                     </div>
                 </li>
                 <li class="priorities-list__wrapper">
@@ -128,7 +128,7 @@
                         </h4>
                     </div>
                     <div class="priorities-list__number">
-                        4
+                        0
                     </div>
                 </li>
             </ul>
@@ -173,7 +173,7 @@
                 </div>
                 <div class="task-statistic__content">
                     <h3 class="task-statistic__number">
-                        12
+                        0
                     </h3>
                     <h4 class="task-statistic__title">
                         Всего задач
@@ -186,7 +186,7 @@
                 </div>
                 <div class="task-statistic__content">
                     <h3 class="task-statistic__number">
-                        4
+                        0
                     </h3>
                     <h4 class="task-statistic__title">
                         К выполнению
@@ -199,7 +199,7 @@
                 </div>
                 <div class="task-statistic__content">
                     <h3 class="task-statistic__number">
-                        3
+                        0
                     </h3>
                     <h4 class="task-statistic__title">
                         В работе
@@ -212,7 +212,7 @@
                 </div>
                 <div class="task-statistic__content">
                     <h3 class="task-statistic__number">
-                        5
+                        0
                     </h3>
                     <h4 class="task-statistic__title">
                         Выполнено
@@ -230,39 +230,14 @@
                             К выполнению
                         </h4>
                         <span class="for-execution-column__number">
-                            (4)
+                            (0)
                         </span>
                     </div>
                     <div class="for-execution-column__add">
                         +
                     </div>
                 </div>
-                <div class="for-execution__block">
-                    <div class="for-execution__block__header">
-                        <h4 class="for-execution__block__heading">
-                            Изучить JavaScript Promise
-                        </h4>
-                        <img src="assets/icons/three-dots.png" alt="" class="three-dots-logo">
-                    </div>
-                    <p class="for-execution__description">
-                        Пройти теорию и сделать практические заданиями по промисам.
-                    </p>
-                    <div class="for-execution__footer">
-                        <div class="complexity-hight">
-                            <div class="complexity-hight__wrapper-logo">
-                                <img src="assets/icons/check.png" alt="">
-                            </div>
-                            <h5 class="complexity-hight__title">
-                                Высокий
-                            </h5>
-                        </div>
-                        <div class="for-execution__wrapper-date">
-                            <img src="assets/icons/calendar.png" alt="" class="calendar-logo">
-                            <time class="task-card__date" datetime="2026-11-15">
-                                15 ноября
-                            </time>
-                        </div>
-                    </div>
+                <div class="for-execution__tasks" data-status="todo">
                 </div>
             </div>
             <div class="in-progress-column">
@@ -274,39 +249,15 @@
                             В работе
                         </h4>
                         <span class="in-progress-column__number">
-                            (3)
+                            (0)
                         </span>
                     </div>
                     <div class="in-progress-column__add">
                         +
                     </div>
                 </div>
-                <div class="in-progress__block">
-                    <div class="in-progress__block__header">
-                        <h4 class="in-progress__block__heading">
-                            Изучить JavaScript Promise
-                        </h4>
-                        <img src="assets/icons/three-dots.png" alt="" class="three-dots-logo">
-                    </div>
-                    <p class="in-progress__description">
-                        Пройти теорию и сделать практические заданиями по промисам.
-                    </p>
-                    <div class="in-progress__footer">
-                        <div class="complexity-hight">
-                            <div class="complexity-hight__wrapper-logo">
-                                <img src="assets/icons/check.png" alt="">
-                            </div>
-                            <h5 class="complexity-hight__title">
-                                Высокий
-                            </h5>
-                        </div>
-                        <div class="in-progress__wrapper-date">
-                            <img src="assets/icons/calendar.png" alt="" class="calendar-logo">
-                            <time class="task-card__date" datetime="2026-11-15">
-                                15 ноября
-                            </time>
-                        </div>
-                    </div>
+                <div class="in-progress__tasks" data-status="progress">
+
                 </div>
             </div>
             <div class="ready-column">
@@ -318,41 +269,48 @@
                             Готово
                         </h4>
                         <span class="ready-column__number">
-                            (5)
+                            (0)
                         </span>
                     </div>
-                    <div class="ready-column___add">
+                    <div class="ready-column__add">
                         +
                     </div>
                 </div>
-                <div class="ready-column__block">
-                    <div class="ready-column__block__header">
-                        <h4 class="ready-column__block__heading">
-                            Изучить JavaScript Promise
+                <div class="ready__tasks" data-status="done">
+
+                </div>
+            </div>
+            <template id="task-template">
+                <article class="task-card">
+                    <div class="task-card__header">
+                        <h4 class="task-card__heading">
+
                         </h4>
-                        <img src="assets/icons/three-dots.png" alt="" class="three-dots-logo">
+                        <button class="task-card__menu-button" type="button" aria-label="Действия с задачей">
+                            <img src="assets/icons/three-dots.png" alt="">
+                        </button>
                     </div>
-                    <p class="ready-column__description">
-                        Пройти теорию и сделать практические заданиями по промисам.
+                    <p class="task-card__description">
+
                     </p>
-                    <div class="ready-column__footer">
-                        <div class="complexity-hight">
-                            <div class="complexity-hight__wrapper-logo">
+                    <div class="task-card__footer">
+                        <div class="task-card__priority complexity-hight">
+                            <div class="task-card__priority__wrapper-logo">
                                 <img src="assets/icons/check.png" alt="">
                             </div>
-                            <h5 class="complexity-hight__title">
-                                Высокий
+                            <h5 class="task-card__priority__title">
+
                             </h5>
                         </div>
-                        <div class="ready-column__wrapper-date">
+                        <div class="task-card__wrapper-date">
                             <img src="assets/icons/calendar.png" alt="" class="calendar-logo">
-                            <time class="task-card__date" datetime="2026-11-15">
-                                15 ноября
+                            <time class="task-card__date" datetime="">
+
                             </time>
                         </div>
                     </div>
-                </div>
-            </div>
+                </article>
+            </template>
         </section>
     </main>
     <dialog class="task-modal">
