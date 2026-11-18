@@ -801,6 +801,12 @@ ul {
     font-weight: 100;
 }
 
+.task-card__menu-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 .task-name__input,
 .task-description__text {
     background-color: #202a39;

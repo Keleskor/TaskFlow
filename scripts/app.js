@@ -63,3 +63,43 @@ closeModalButton.addEventListener("click", () => {
 cancelModalButton.addEventListener("click", () => {
     taskModal.close();
 })
+
+const template = document.querySelector("#task-template");
+
+const container = document.querySelector(
+    '[data-status="todo"]'
+);
+
+const tasks = [
+    {
+        id: 1,
+        title: "Изучить JavaScript",
+        description: "Я планирую изучить",
+        priority: "high",
+        status: "todo",
+        deadline: "2026-12-31"
+    },
+    {
+        id: 2,
+        title: "Изучить PHP",
+        description: "Я планирую изучить",
+        priority: "medium",
+        status: "progress",
+        deadline: "2027-12-31"
+    },
+    {
+        id: 3,
+        title: "Изучить React",
+        description: "Я планирую изучить",
+        priority: "low",
+        status: "done",
+        deadline: "2028-12-31"
+    },
+
+];
+
+const templateClone = template.content.cloneNode(true);
+
+const cardHeading = templateClone.querySelector('.task-card__heading');
+const cardDescription = templateClone.querySelector('.task-card__description');
+
