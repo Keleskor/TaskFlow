@@ -92,18 +92,13 @@ const tasks = [                            /* Массив с объектами
         priority: "low",
         status: "done",
         deadline: "2028-12-31"
-    },
-    {
-        id: 4,
-        title: "Изучить Golang",
-        description: "Я планирую изучить",
-        priority: "low",
-        status: "progress",
-        deadline: "2028-12-31"
     }
 
 ];
 
+let forExecutionNumber = 0;
+let inProgressNumber = 0;
+let readyNumber = 0;
 
 tasks.forEach((task) => {
     const templateClone = template.content.cloneNode(true);
@@ -111,6 +106,13 @@ tasks.forEach((task) => {
 
     const cardHeading = templateClone.querySelector('.task-card__heading');
     const cardDescription = templateClone.querySelector('.task-card__description');
+    if (task.status === "todo") {
+        forExecutionNumber += 1;
+    } else if (task.status === "progress") {
+        inProgressNumber += 1;
+    } else if (task.status === "done") {
+        readyNumber += 1;
+    }
     if (!container) {
         alert(`Колонка для статуса ${task.status} не найдена`);
         return;
@@ -121,5 +123,22 @@ tasks.forEach((task) => {
     }
 })
 
+let numberTasks = tasks.length;
+let numberTasksTitle = document.querySelector('.total-tasks__number');
 
+let todoNumberTitle = document.querySelector('.for-execution__number');
+let progressNumberTitle = document.querySelector('.in-progress__number');
+let readyNumberTitle = document.querySelector('.ready__number');
 
+let todoCardNumberTitle = document.querySelector('.for-execution-column__number');
+let progressCardNumberTitle = document.querySelector('.in-progress-column__number');
+let readyCardNumberTitle = document.querySelector('.ready-column__number');
+
+numberTasksTitle.textContent = numberTasks;
+todoNumberTitle.textContent = forExecutionNumber;
+progressNumberTitle.textContent = inProgressNumber;
+readyNumberTitle.textContent = readyNumber;
+
+todoCardNumberTitle.textContent = `(${forExecutionNumber})`;
+progressCardNumberTitle.textContent = `(${inProgressNumber})`;
+readyCardNumberTitle.textContent = `(${readyNumber})`;

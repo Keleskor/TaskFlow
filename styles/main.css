@@ -449,7 +449,10 @@ ul {
     gap: 5px;
 }
 
-.task-statistic__number {
+.total-tasks__number,
+.ready__number,
+.in-progress__number,
+.for-execution__number {
     font-size: 20px;
     color: white;
     font-family: inter-regular;
