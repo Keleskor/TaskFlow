@@ -820,6 +820,14 @@ ul {
     outline: none;
 }
 
+.in-progress__tasks,
+.for-execution__tasks,
+.ready__tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .task-description__text {
     resize: none;
     height: 120px;

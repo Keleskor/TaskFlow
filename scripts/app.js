@@ -64,13 +64,11 @@ cancelModalButton.addEventListener("click", () => {
     taskModal.close();
 })
 
-const template = document.querySelector("#task-template");
+/*******************Динамическое добавление карточек в определенную колонку по статусу************************/
 
-const container = document.querySelector(
-    '[data-status="todo"]'
-);
+const template = document.querySelector("#task-template"); /* Создал константу, внутри которой шаблон template */
 
-const tasks = [
+const tasks = [                            /* Массив с объектами данных */
     {
         id: 1,
         title: "Изучить JavaScript",
@@ -95,11 +93,33 @@ const tasks = [
         status: "done",
         deadline: "2028-12-31"
     },
+    {
+        id: 4,
+        title: "Изучить Golang",
+        description: "Я планирую изучить",
+        priority: "low",
+        status: "progress",
+        deadline: "2028-12-31"
+    }
 
 ];
 
-const templateClone = template.content.cloneNode(true);
 
-const cardHeading = templateClone.querySelector('.task-card__heading');
-const cardDescription = templateClone.querySelector('.task-card__description');
+tasks.forEach((task) => {
+    const templateClone = template.content.cloneNode(true);
+    const container = document.querySelector(`[data-status="${task.status}"]`);
+
+    const cardHeading = templateClone.querySelector('.task-card__heading');
+    const cardDescription = templateClone.querySelector('.task-card__description');
+    if (!container) {
+        alert(`Колонка для статуса ${task.status} не найдена`);
+        return;
+    } else {
+        cardHeading.textContent = task.title;
+        cardDescription.textContent = task.description;
+        container.append(templateClone);
+    }
+})
+
+
 
