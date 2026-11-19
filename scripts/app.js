@@ -123,6 +123,16 @@ tasks.forEach((task) => {
     }
 })
 
+const highPriorityCount = tasks.filter((task) => {
+    return task.priority === "high";
+}).length;
+const mediumPriorityCount = tasks.filter((task) => {
+    return task.priority === "medium";
+}).length;
+const lowPriorityCount = tasks.filter((task) => {
+    return task.priority === "low";
+}).length;
+
 let numberTasks = tasks.length;
 let numberTasksTitle = document.querySelector('.total-tasks__number');
 
@@ -134,6 +144,14 @@ let todoCardNumberTitle = document.querySelector('.for-execution-column__number'
 let progressCardNumberTitle = document.querySelector('.in-progress-column__number');
 let readyCardNumberTitle = document.querySelector('.ready-column__number');
 
+let todoNumberAside = document.querySelector('#todo-number');
+let progressNumberAside = document.querySelector('#progress-number');
+let readyNumberAside = document.querySelector('#ready-number');
+
+let lowPriorityNumber = document.querySelector('#low-priority');
+let mediumPriorityNumber = document.querySelector('#medium-priority');
+let HighPriorityNumber = document.querySelector('#high-priority');
+
 numberTasksTitle.textContent = numberTasks;
 todoNumberTitle.textContent = forExecutionNumber;
 progressNumberTitle.textContent = inProgressNumber;
@@ -142,3 +160,11 @@ readyNumberTitle.textContent = readyNumber;
 todoCardNumberTitle.textContent = `(${forExecutionNumber})`;
 progressCardNumberTitle.textContent = `(${inProgressNumber})`;
 readyCardNumberTitle.textContent = `(${readyNumber})`;
+
+todoNumberAside.textContent = forExecutionNumber;
+progressNumberAside.textContent = inProgressNumber;
+readyNumberAside.textContent = readyNumber;
+
+lowPriorityNumber.textContent = lowPriorityCount;
+mediumPriorityNumber.textContent = mediumPriorityCount;
+HighPriorityNumber.textContent = highPriorityCount;
