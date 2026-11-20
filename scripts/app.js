@@ -92,13 +92,18 @@ const tasks = [                            /* Массив с объектами
         priority: "low",
         status: "done",
         deadline: "2028-12-31"
+    },
+    {
+        id: 4,
+        title: "Изучить React",
+        description: "Я планирую изучить",
+        priority: "low",
+        status: "done",
+        deadline: "2028-12-31"
     }
 
 ];
 
-let forExecutionNumber = 0;
-let inProgressNumber = 0;
-let readyNumber = 0;
 
 tasks.forEach((task) => {
     const templateClone = template.content.cloneNode(true);
@@ -106,15 +111,8 @@ tasks.forEach((task) => {
 
     const cardHeading = templateClone.querySelector('.task-card__heading');
     const cardDescription = templateClone.querySelector('.task-card__description');
-    if (task.status === "todo") {
-        forExecutionNumber += 1;
-    } else if (task.status === "progress") {
-        inProgressNumber += 1;
-    } else if (task.status === "done") {
-        readyNumber += 1;
-    }
     if (!container) {
-        alert(`Колонка для статуса ${task.status} не найдена`);
+        console.warn(`Колонка для статуса ${task.status} не найдена`);
         return;
     } else {
         cardHeading.textContent = task.title;
@@ -123,17 +121,9 @@ tasks.forEach((task) => {
     }
 })
 
-const highPriorityCount = tasks.filter((task) => {
-    return task.priority === "high";
-}).length;
-const mediumPriorityCount = tasks.filter((task) => {
-    return task.priority === "medium";
-}).length;
-const lowPriorityCount = tasks.filter((task) => {
-    return task.priority === "low";
-}).length;
 
-let numberTasks = tasks.length;
+const numberTasks = tasks.length;
+
 let numberTasksTitle = document.querySelector('.total-tasks__number');
 
 let todoNumberTitle = document.querySelector('.for-execution__number');
@@ -150,21 +140,33 @@ let readyNumberAside = document.querySelector('#ready-number');
 
 let lowPriorityNumber = document.querySelector('#low-priority');
 let mediumPriorityNumber = document.querySelector('#medium-priority');
-let HighPriorityNumber = document.querySelector('#high-priority');
+let highPriorityNumber = document.querySelector('#high-priority');
+
+function countTasksByPriority(tasks, priority) {
+    const count = tasks.filter(task => task.priority === priority).length;
+    return count;
+}
+function countTasksByStatus(tasks, status) {
+    const count = tasks.filter(task => task.status === status).length;
+    return count;
+}
+
 
 numberTasksTitle.textContent = numberTasks;
-todoNumberTitle.textContent = forExecutionNumber;
-progressNumberTitle.textContent = inProgressNumber;
-readyNumberTitle.textContent = readyNumber;
 
-todoCardNumberTitle.textContent = `(${forExecutionNumber})`;
-progressCardNumberTitle.textContent = `(${inProgressNumber})`;
-readyCardNumberTitle.textContent = `(${readyNumber})`;
+todoNumberTitle.textContent = countTasksByStatus(tasks, "todo");
+progressNumberTitle.textContent = countTasksByStatus(tasks, "progress");
+readyNumberTitle.textContent = countTasksByStatus(tasks, "done");
 
-todoNumberAside.textContent = forExecutionNumber;
-progressNumberAside.textContent = inProgressNumber;
-readyNumberAside.textContent = readyNumber;
+lowPriorityNumber.textContent = countTasksByPriority(tasks, "low");
+mediumPriorityNumber.textContent = countTasksByPriority(tasks, "medium");
+highPriorityNumber.textContent = countTasksByPriority(tasks, "high");
 
-lowPriorityNumber.textContent = lowPriorityCount;
-mediumPriorityNumber.textContent = mediumPriorityCount;
-HighPriorityNumber.textContent = highPriorityCount;
+todoCardNumberTitle.textContent = `(${countTasksByStatus(tasks, "todo")})`;
+progressCardNumberTitle.textContent = `(${countTasksByStatus(tasks, "progress")})`;
+readyCardNumberTitle.textContent = `(${countTasksByStatus(tasks, "done")})`;
+
+todoNumberAside.textContent = countTasksByStatus(tasks, "todo");
+progressNumberAside.textContent = countTasksByStatus(tasks, "progress");
+readyNumberAside.textContent = countTasksByStatus(tasks, "done");
+

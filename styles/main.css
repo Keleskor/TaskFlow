@@ -632,12 +632,6 @@ ul {
     border-radius: var(--card-radius);
 }
 
-.complexity-hight {
-    background: linear-gradient(110deg,
-            #653339 0%,
-            #5A2D35 50%,
-            #4B2832 100%);
-}
 
 .task-card__priority__title {
     font-size: 14px;
@@ -650,7 +644,6 @@ ul {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-color: #f65b5a;
     display: flex;
     justify-content: center;
     align-items: center;
